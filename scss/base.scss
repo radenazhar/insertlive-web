@@ -1,0 +1,113 @@
+/* ============================================
+   InsertLive V.20 — Base Styles
+   Reset, typography, global reusable classes
+   ============================================ */
+
+/* ── Reset ───────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-body-line-height);
+  color: var(--color-gray-900);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Typography ──────────────────────────── */
+h1, .h1 {
+  font-size: var(--font-h1-size);
+  font-weight: var(--font-h1-weight);
+  line-height: var(--font-h1-line-height);
+  color: var(--color-black);
+}
+
+h2, .h2 {
+  font-size: var(--font-h2-size);
+  font-weight: var(--font-h2-weight);
+  line-height: var(--font-h2-line-height);
+  color: var(--color-black);
+}
+
+h3, .h3 {
+  font-size: var(--font-h3-size);
+  font-weight: var(--font-h3-weight);
+  line-height: var(--font-h3-line-height);
+  color: var(--color-black);
+}
+
+h4, .h4 {
+  font-size: var(--font-h4-size);
+  font-weight: var(--font-h4-weight);
+  line-height: var(--font-h4-line-height);
+}
+
+h5, .h5 {
+  font-size: var(--font-h5-size);
+  font-weight: var(--font-h5-weight);
+  line-height: var(--font-h5-line-height);
+}
+
+/* ── Utility Text Classes ────────────────── */
+.text-body      { font-size: var(--font-body-size); line-height: var(--font-body-line-height); }
+.text-secondary { font-size: var(--font-secondary-size); line-height: var(--font-secondary-line-height); color: var(--color-gray-600); }
+.text-label     { font-size: var(--font-label-size); font-weight: var(--font-label-weight); line-height: var(--font-label-line-height); }
+.text-legal     { font-size: var(--font-legal-size); line-height: var(--font-legal-line-height); color: var(--color-gray-400); }
+
+/* ── Container (Adaptive 10-Col & 8-Col Grid) ── */
+.container {
+  // Laptop & Layar 1366px - 1536px: 10 Kolom di tengah (1 kolom kiri & kanan kosong)
+  width: calc(100% - (2 * (100% / 12)));
+  max-width: 1094px;
+  margin: 0 auto;
+  padding: 0;
+
+  // Layar Lebar 1920px+ (Scale 100%): 8 Kolom di tengah (2 kolom kiri & kanan kosong = ~1280px)
+  @media (min-width: 1600px) {
+    width: calc(100% - (4 * (100% / 12)));
+    max-width: 1280px;
+  }
+
+  // Tablet & Mobile
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InsertLive V.20 — Berita Selebriti & Entertainment Terkini</title>
+  <meta name="description"
+    content="Portal berita selebriti, hiburan, gaya hidup, K-Pop, dan video terkini di Indonesia." />
+
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/scss/variables.scss" />
+  <link rel="stylesheet" href="/scss/base.scss" />
+  <link rel="stylesheet" href="/scss/components.scss" />
+  <link rel="stylesheet" href="/scss/layout.scss" />
+  <link rel="stylesheet" href="/scss/hero.scss" />
+  <link rel="stylesheet" href="/scss/snap.scss" />
+  <link rel="stylesheet" href="/scss/seleb.scss" />
+  <link rel="stylesheet" href="/scss/pop.scss" />
+  <link rel="stylesheet" href="/scss/mobile.scss" />
+</head>
+
+<body>
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- ============================================
+         1. SITE HEADER & NAVIGATION
+         ============================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" aria-label="InsertLive Home">
+        <img src="./Component icon/Insertlive Logo 1.png" alt="InsertLive Logo" style="height: 91px;" />
+      </a>
+    </div>
+  </header>
+
+  <nav class="nav-bar" aria-label="Kategori Utama" id="main-nav">
+    <div class="container nav-bar__inner">
+      <!-- Sticky Logo (hidden by default) -->
+      <button class="nav-mobile-toggle" aria-label="Menu">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <a href="/" class="nav-bar__logo" id="nav-logo" aria-label="InsertLive Home">
+        <img src="./Component icon/Insertlive Logo White 1.png" alt="InsertLive Logo" style="height: 32px;" />
+      </a>
+
+      <!-- Nav Links -->
+      <div class="nav-bar__menu" id="nav-menu">
+        <a href="/" class="nav-bar__tab nav-bar__tab--active" id="nav-home">
+          <span>Home</span>
+          <span class="nav-bar__indicator"></span>
+        </a>
+        <div class="nav-bar__item">
+          <a href="/seleb.html" class="nav-bar__tab" id="nav-seleb">
+            <span>!SELEB <svg class="dropdown-arrow" width="9" height="6"><use href="/icons/sprite.svg#icon-dropdown-arrow" /></svg></span>
+          </a>
+          <div class="nav-bar__dropdown">
+            <div class="nav-bar__dropdown-title">!SELEB</div>
+            <div class="nav-bar__dropdown-links">
+              <a href="/seleb-news.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-seleb-news" /></svg>
+                </div>
+                <span>SELEB NEWS</span>
+              </a>
+              <a href="/film.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-film" /></svg>
+                </div>
+                <span>FILM</span>
+              </a>
+              <a href="/musik.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-music" /></svg>
+                </div>
+                <span>MUSIK</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bar__item">
+          <a href="/pop.html" class="nav-bar__tab" id="nav-pop">
+            <span>!POP <svg class="dropdown-arrow" width="9" height="6"><use href="/icons/sprite.svg#icon-dropdown-arrow" /></svg></span>
+          </a>
+          <div class="nav-bar__dropdown">
+            <div class="nav-bar__dropdown-title">!POP</div>
+            <div class="nav-bar__dropdown-links">
+              <a href="/kpop.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-music" /></svg>
+                </div>
+                <span>KPOP</span>
+              </a>
+              <a href="/jpop.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-music" /></svg>
+                </div>
+                <span>JPOP</span>
+              </a>
+              <a href="/tpop.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-music" /></svg>
+                </div>
+                <span>TPOP</span>
+              </a>
+              <a href="/cpop.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-music" /></svg>
+                </div>
+                <span>CPOP</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bar__item">
+          <a href="/pedia.html" class="nav-bar__tab" id="nav-pedia">
+            <span>!PEDIA <svg class="dropdown-arrow" width="9" height="6"><use href="/icons/sprite.svg#icon-dropdown-arrow" /></svg></span>
+          </a>
+          <div class="nav-bar__dropdown">
+            <div class="nav-bar__dropdown-title">!PEDIA</div>
+            <div class="nav-bar__dropdown-links">
+              <a href="/viral.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-viral" /></svg>
+                </div>
+                <span>VIRAL</span>
+              </a>
+              <a href="/travel.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-travel" /></svg>
+                </div>
+                <span>TRAVEL</span>
+              </a>
+              <a href="/food.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-food" /></svg>
+                </div>
+                <span>FOOD</span>
+              </a>
+              <a href="/fashion.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-fashion" /></svg>
+                </div>
+                <span>FASHION</span>
+              </a>
+              <a href="/beauty.html" class="nav-bar__dropdown-link">
+                <div class="nav-bar__dropdown-icon">
+                  <svg width="20" height="20"><use href="/icons/sprite.svg#icon-beauty" /></svg>
+                </div>
+                <span>BEAUTY</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bar__item">
+          <a href="/watch.html" class="nav-bar__tab" id="nav-watch">
+            <span>!WATCH</span>
+          </a>
+        </div>
+        <button class="nav-bar__search-btn" id="search-btn" aria-label="Cari berita">
+          <svg width="18" height="18"><use href="/icons/sprite.svg#icon-search" /></svg>
+        </button>
+      </div>
+
+      <!-- Search Bar (hidden by default via css opacity/visibility) -->
+      <div class="nav-bar__search-bar" id="search-bar">
+        <div class="search-bar__input-wrapper">
+          <input type="text" placeholder="search" class="search-bar__input" id="search-input" />
+          <button class="search-bar__submit" aria-label="Submit search">
+            <svg width="16" height="16"><use href="/icons/sprite.svg#icon-search" /></svg>
+          </button>
+        </div>
+        <button class="search-bar__cancel" id="search-cancel">Cancel</button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+  <main class="main-content">
+
+    <!-- ── 2. HERO SPOTLIGHT ────────────────── -->
+    <section class="hero" id="hero-spotlight">
+      <div class="container">
+        <div class="hero__card">
+          <div class="hero__content">
+            <span class="badge hero__badge">• !SELEB</span>
+            <h1 class="hero__title">Lesti Baru Saja Merayakan Ulang Tahun Anaknya yang ke-9</h1>
+            <p class="hero__excerpt">The looks, the reunions, and the after-party moments you definitely missed from
+              fashion's biggest evening in New</p>
+
+            <div class="hero__actions">
+              <a href="/detail.html" class="btn btn--primary hero__cta">
+                <span>Selengkapnya</span>
+                <img src="./Component icon/Arrow_up.svg" alt="Arrow Up" style="width: 21px; height: 21px;" />
+              </a>
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="pagination-dots" aria-label="Slide navigation">
+              <button class="pagination-dots__dot pagination-dots__dot--active" aria-label="Slide 1"
+                data-slide="0"></button>
+              <button class="pagination-dots__dot" aria-label="Slide 2" data-slide="1"></button>
+              <button class="pagination-dots__dot" aria-label="Slide 3" data-slide="2"></button>
+              <button class="pagination-dots__dot" aria-label="Slide 4" data-slide="3"></button>
+            </div>
+          </div>
+
+          <div class="hero__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800&auto=format&fit=crop"
+              alt="Lesti dan keluarga" class="hero__image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. !SNAP SECTION ────────────────── -->
+    <section class="snap" id="snap-section" aria-labelledby="snap-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title" id="snap-title">!Snap</h2>
+          <a href="/snap" class="see-all">See All</a>
+        </div>
+
+        <div class="snap__grid">
+          <!-- Snap Card 1 -->
+          <article class="snap-card">
+            <div class="snap-card__thumbnail">
+              <span class="badge snap-card__badge">SNAP</span>
+              <button class="snap-card__play" aria-label="Play Video">
+                <svg><use href="/icons/sprite.svg#icon-play" /></svg>
+              </button>
+              <span class="snap-card__duration">12:31</span>
+              <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=400&auto=format&fit=crop"
+                alt="Evakuasi banjir" class="snap-card__img" />
+            </div>
+            <div class="snap-card__info">
+              <span class="snap-card__category">LOREM</span>
+              <h3 class="snap-card__title">Lorem ipsum dolor sit amet consectetur sollicitudin.</h3>
+            </div>
+          </article>
+
+          <!-- Snap Card 2 -->
+          <article class="snap-card">
+            <div class="snap-card__thumbnail">
+              <span class="badge snap-card__badge">SNAP</span>
+              <button class="snap-card__play" aria-label="Play Video">
+                <svg><use href="/icons/sprite.svg#icon-play" /></svg>
+              </button>
+              <span class="snap-card__duration">12:31</span>
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop"
+                alt="Konser musik" class="snap-card__img" />
+            </div>
+            <div class="snap-card__info">
+              <span class="snap-card__category">LOREM</span>
+              <h3 class="snap-card__title">Lorem ipsum dolor sit amet consectetur sollicitudin.</h3>
+            </div>
+          </article>
+
+          <!-- Snap Card 3 -->
+          <article class="snap-card">
+            <div class="snap-card__thumbnail">
+              <span class="badge snap-card__badge">SNAP</span>
+              <button class="snap-card__play" aria-label="Play Video">
+                <svg><use href="/icons/sprite.svg#icon-play" /></svg>
+              </button>
+              <span class="snap-card__duration">12:31</span>
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop"
+                alt="Foto selebriti" class="snap-card__img" />
+            </div>
+            <div class="snap-card__info">
+              <span class="snap-card__category">LOREM</span>
+              <h3 class="snap-card__title">Lorem ipsum dolor sit amet consectetur sollicitudin.</h3>
+            </div>
+          </article>
+
+          <!-- Snap Card 4 -->
+          <article class="snap-card">
+            <div class="snap-card__thumbnail">
+              <span class="badge snap-card__badge">SNAP</span>
+              <button class="snap-card__play" aria-label="Play Video">
+                <svg><use href="/icons/sprite.svg#icon-play" /></svg>
+              </button>
+              <span class="snap-card__duration">12:31</span>
+              <img src="https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=400&auto=format&fit=crop"
+                alt="Iklan produk" class="snap-card__img" />
+            </div>
+            <div class="snap-card__info">
+              <span class="snap-card__category">LOREM</span>
+              <h3 class="snap-card__title">Lorem ipsum dolor sit amet consectetur sollicitudin.</h3>
+            </div>
+          </article>
+
+          <!-- Snap Card 5 -->
+          <article class="snap-card">
+            <div class="snap-card__thumbnail">
+              <span class="badge snap-card__badge">SNAP</span>
+              <button class="snap-card__play" aria-label="Play Video">
+                <svg><use href="/icons/sprite.svg#icon-play" /></svg>
+              </button>
+              <span class="snap-card__duration">12:31</span>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+                alt="Penghargaan pejabat" class="snap-card__img" />
+            </div>
+            <div class="snap-card__info">
+              <span class="snap-card__category">LOREM</span>
+              <h3 class="snap-card__title">Lorem ipsum dolor sit amet consectetur sollicitudin.</h3>
+            </div>
+          </article>
+
+          <!-- Snap Card 6 -->
+          <article class="snap-card">
+            <div class="snap-card__thumbnail">
+              <span class="badge snap-card__badge">SNAP</span>
+              <button class="snap-card__play" aria-label="Play Video">
+                <svg><use href="/icons/sprite.svg#icon-play" /></svg>
+              </button>
+              <span class="snap-card__duration">12:31</span>
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+                alt="Penghargaan pejabat 2" class="snap-card__img" />
+            </div>
+            <div class="snap-card__info">
+              <span class="snap-card__category">LOREM</span>
+              <h3 class="snap-card__title">Lorem ipsum dolor sit amet consectetur sollicitudin.</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. !SELEB SECTION + SIDEBAR ─────── -->
+    <section class="seleb" id="seleb-section" aria-labelledby="seleb-title">
+      <div class="container">
+        <div class="seleb__grid">
+
+          <!-- Left Column: Article Feed -->
+          <div class="seleb__feed">
+            <div class="section-header">
+              <h2 class="section-header__title" id="seleb-title" style="color: var(--color-primary);">!SELEB</h2>
+              <a href="/seleb.html" class="see-all">See All</a>
+            </div>
+
+            <!-- Article Card 1 -->
+            <article class="article-card article-card--featured">
+              <div class="article-card__thumbnail">
+                <span class="article-card__badge">!POP</span>
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop"
+                  alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="article-card__content">
+                <h3 class="article-card__title">Lorem ipsum dolor sit amet consectetur pellentesque.</h3>
+                <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                  sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                <a href="/detail.html" class="article-card__readmore">Read More</a>
+              </div>
+            </article>
+
+            <!-- Article Card 2 -->
+            <article class="article-card">
+              <div class="article-card__thumbnail">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+                  alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="article-card__content">
+                <span class="article-card__category">!KPOP</span>
+                <h3 class="article-card__title">Potret 3 Member Pertama OURBIRTHDAY, Girlband Baru JYP!</h3>
+                <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                  sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                <a href="/detail.html" class="article-card__readmore">Read More</a>
+              </div>
+            </article>
+
+            <!-- Article Card 3 -->
+            <article class="article-card">
+              <div class="article-card__thumbnail">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+                  alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="article-card__content">
+                <span class="article-card__category">!KPOP</span>
+                <h3 class="article-card__title">Taylor Swift Siap Comeback Lewat Patient Zero, Rilis 25 September!</h3>
+                <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                  sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                <a href="/detail.html" class="article-card__readmore">Read More</a>
+              </div>
+            </article>
+
+            <!-- Article Card 4 -->
+            <article class="article-card">
+              <div class="article-card__thumbnail">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop"
+                  alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div class="article-card__content">
+                <span class="article-card__category">!KPOP</span>
+                <h3 class="article-card__title">SaWaDiKa Lisa BLACKPINK Cetak Prestasi di Billboard Hot 100</h3>
+                <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                  sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                <a href="/detail.html" class="article-card__readmore">Read More</a>
+              </div>
+            </article>
+
+            <!-- ── !POP SECTION ─────────────────── -->
+            <div class="pop" id="pop-section" aria-labelledby="pop-title" style="margin-top: 40px;">
+              <div class="section-header">
+                <h2 class="section-header__title" id="pop-title" style="color: var(--color-primary);">!POP</h2>
+                <a href="/pop.html" class="see-all pop-see-all-desktop">See All</a>
+              </div>
+
+              <div class="pop__grid">
+                <!-- Pop Card 1 -->
+                <article class="pop-card">
+                  <div class="pop-card__thumbnail">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+                      alt="Pop Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                  </div>
+                  <div class="pop-card__info">
+                    <span class="pop-card__badge">!KPOP</span>
+                    <h3 class="pop-card__title">Potret 3 Member Pertama OURBIRTHDAY, Girlband Baru JYP!</h3>
+                  </div>
+                </article>
+
+                <!-- Pop Card 2 -->
+                <article class="pop-card">
+                  <div class="pop-card__thumbnail">
+                    <img
+                      src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop"
+                      alt="Pop Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                  </div>
+                  <div class="pop-card__info">
+                    <span class="pop-card__badge">!KPOP</span>
+                    <h3 class="pop-card__title">Taylor Swift Siap Comeback Lewat Patient Zero, Rilis 25 September!</h3>
+                  </div>
+                </article>
+
+                <!-- Pop Card 3 -->
+                <article class="pop-card">
+                  <div class="pop-card__thumbnail">
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+                      alt="Pop Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                  </div>
+                  <div class="pop-card__info">
+                    <span class="pop-card__badge">!KPOP</span>
+                    <h3 class="pop-card__title">SaWaDiKa Lisa BLACKPINK Cetak Prestasi di Billboard Hot 100</h3>
+                  </div>
+                </article>
+
+                <!-- Pop Card 4 -->
+                <article class="pop-card mobile-only">
+                  <div class="pop-card__thumbnail">
+                    <img
+                      src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop"
+                      alt="Pop Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                  </div>
+                  <div class="pop-card__info">
+                    <span class="pop-card__badge" style="visibility: hidden;">!KPOP</span>
+                    <h3 class="pop-card__title">Sara Wijayanto Tiba di PA Jaksel, Siap Jalani Mediasi Gugatan Cerai</h3>
+                  </div>
+                </article>
+              </div>
+              <a href="/pop.html" class="btn-see-all-full">See All</a>
+            </div>
+
+            <!-- ── !PEDIA SECTION ─────────────────── -->
+            <div class="pedia" id="pedia-section" aria-labelledby="pedia-title"
+              style="margin-top: 40px; display: flex; flex-direction: column; gap: 0;">
+              <div class="section-header">
+                <h2 class="section-header__title" id="pedia-title" style="color: var(--color-primary);">!PEDIA</h2>
+                <a href="/pedia.html" class="see-all pedia-see-all-desktop">See All</a>
+              </div>
+
+              <!-- Article Card 1 -->
+              <article class="article-card">
+                <div class="article-card__thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop"
+                    alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="article-card__content">
+                  <h3 class="article-card__title">Syahrini soal Foto dari Getty Viral: Jadi Kayak Masuk ke Minyak Tanah
+                  </h3>
+                  <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                    sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                  <a href="/detail.html" class="article-card__readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Article Card 2 -->
+              <article class="article-card">
+                <div class="article-card__thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+                    alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="article-card__content">
+                  <h3 class="article-card__title">Bukan Aktor Dracin atau Boyband, Pria Ini Jadi Idola Anak Muda China
+                  </h3>
+                  <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                    sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                  <a href="/detail.html" class="article-card__readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Article Card 3 -->
+              <article class="article-card">
+                <div class="article-card__thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+                    alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="article-card__content">
+                  <h3 class="article-card__title">Respons Ruben Onsu soal Somasi Sarwendah Terkait Utang</h3>
+                  <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                    sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                  <a href="/detail.html" class="article-card__readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Article Card 4 -->
+              <article class="article-card">
+                <div class="article-card__thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop"
+                    alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="article-card__content">
+                  <h3 class="article-card__title">Angelina Jolie Jual Rumah Mewah Bersejarah, Harganya Rp443 Miliar</h3>
+                  <p class="article-card__excerpt">Lorem ipsum lacinia molestie augue viverra vitae cras sagittis velit
+                    sem morbi aliquam pretium laoreet vestibulum mattis consequat tellus dolor volutpat porta a.h</p>
+                  <a href="/detail.html" class="article-card__readmore">Read More</a>
+                </div>
+              </article>
+              <a href="/pedia.html" class="btn-see-all-full">See All</a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sidebar -->
+          <aside class="sidebar">
+
+            <!-- Widget Terpopuler -->
+            <div class="popular-widget">
+              <h3 class="popular-widget__title">Terpopuler</h3>
+              <div class="popular-widget__list">
+                <div class="popular-item">
+                  <div class="popular-item__thumbnail"><img
+                      src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=200&auto=format&fit=crop"
+                      alt="Thumbnail" loading="lazy" /><span class="popular-item__rank">1</span></div>
+                  <div class="popular-item__info"><span class="popular-item__title">Sara Wijayanto Tiba di PA Jaksel,
+                      Siap Jalani Mediai Gugatan...</span></div>
+                </div>
+                <div class="popular-item">
+                  <div class="popular-item__thumbnail"><img
+                      src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=200&auto=format&fit=crop"
+                      alt="Thumbnail" loading="lazy" /><span class="popular-item__rank">2</span></div>
+                  <div class="popular-item__info"><span class="popular-item__title">Ruben Onsu Lunasi Utang Rp 3,5
+                      Miliar ke Mantan Rekan...</span></div>
+                </div>
+                <div class="popular-item">
+                  <div class="popular-item__thumbnail"><img
+                      src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=200&auto=format&fit=crop"
+                      alt="Thumbnail" loading="lazy" /><span class="popular-item__rank">3</span></div>
+                  <div class="popular-item__info"><span class="popular-item__title">Potret 3 Member Pertama
+                      OURBIRTHDAY...</span></div>
+                </div>
+                <div class="popular-item">
+                  <div class="popular-item__thumbnail"><img
+                      src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=200&auto=format&fit=crop"
+                      alt="Thumbnail" loading="lazy" /><span class="popular-item__rank">4</span></div>
+                  <div class="popular-item__info"><span class="popular-item__title">Lorem ipsum dolor sit amet
+                      consectetur pellentesque.</span></div>
+                </div>
+                <div class="popular-item">
+                  <div class="popular-item__thumbnail"><img
+                      src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=200&auto=format&fit=crop"
+                      alt="Thumbnail" loading="lazy" /><span class="popular-item__rank">5</span></div>
+                  <div class="popular-item__info"><span class="popular-item__title">Lorem ipsum dolor sit amet
+                      consectetur pellentesque.</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget Jadwal Terkini -->
+            <div class="schedule-widget">
+              <div class="schedule-widget__header">
+                <h3 class="schedule-widget__title">Jadwal Terkini</h3>
+                <span class="schedule-widget__date">Tue, 22 Sep '26</span>
+              </div>
+              <div class="schedule-widget__list">
+                <div class="schedule-item">
+                  <span class="schedule-item__time">05:00</span>
+                  <span class="schedule-item__show">ISLAM ITU INDAH</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">06:30</span>
+                  <span class="schedule-item__show">INSERT PAGI</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">07:30</span>
+                  <span class="schedule-item__show">CNN INDONESIA MORNING</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">08:30</span>
+                  <span class="schedule-item__show">PAGI-PAGI AMBYAR</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">10:30</span>
+                  <span class="schedule-item__show">INSERT</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">12:30</span>
+                  <span class="schedule-item__show">BROWNIS</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">14:00</span>
+                  <span class="schedule-item__show">RUMPI</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-item__time">15:00</span>
+                  <span class="schedule-item__show">INSERT TODAY</span>
+                </div>
+              </div>
+              <div class="schedule-widget__cta">
+                <a href="#" class="schedule-widget__cta-btn">
+                  FULL SCHEDULE <span class="plus-circle">+</span>
+                </a>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Main Section -->
+
+  </main>
+
+  <!-- ============================================
+         6. SITE FOOTER
+         ============================================ -->
+  <footer class="site-footer mobile-footer-bg">
+    <div class="container site-footer__inner">
+      <div class="site-footer__logo-wrap">
+        <a href="/" class="site-footer__logo" aria-label="InsertLive Home">
+          <img src="./Component icon/Insertlive Logo White 1.png" alt="InsertLive Logo" />
+        </a>
+      </div>
+
+      <div class="site-footer__socials">
+        <a href="#" class="site-footer__social-icon" aria-label="Instagram">
+          <svg><use href="/icons/sprite.svg#icon-instagram" /></svg>
+        </a>
+        <a href="#" class="site-footer__social-icon" aria-label="Facebook">
+          <svg><use href="/icons/sprite.svg#icon-facebook" /></svg>
+        </a>
+        <a href="#" class="site-footer__social-icon" aria-label="X (Twitter)">
+          <svg><use href="/icons/sprite.svg#icon-twitter" /></svg>
+        </a>
+        <a href="#" class="site-footer__social-icon" aria-label="YouTube">
+          <svg><use href="/icons/sprite.svg#icon-youtube" /></svg>
+        </a>
+        <a href="#" class="site-footer__social-icon" aria-label="TikTok">
+          <svg><use href="/icons/sprite.svg#icon-tiktok" /></svg>
+        </a>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="#" class="site-footer__link">About Us</a>
+        <a href="#" class="site-footer__link">Contact</a>
+        <a href="#" class="site-footer__link">Privacy</a>
+        <a href="#" class="site-footer__link">Terms</a>
+        <a href="#" class="site-footer__link">Contact US</a>
+      </nav>
+
+      <p class="site-footer__copyright">Copyright ©2026 Insertlive All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

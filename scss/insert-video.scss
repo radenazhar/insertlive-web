@@ -1,0 +1,221 @@
+.insert-video-page {
+  padding: 40px 0 80px;
+  background-color: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background gradient blur as seen in the mockup */
+.insert-video-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100%;
+  background: radial-gradient(ellipse at left top, rgba(227, 30, 36, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.insert-video-page .container {
+  position: relative;
+  z-index: 1;
+}
+
+.insert-video-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.insert-video-header__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.insert-video-breadcrumb {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #9CA3AF;
+  padding: 0;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.insert-video-breadcrumb a {
+  color: #9CA3AF;
+  text-decoration: none;
+}
+
+.insert-video-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.insert-video-search {
+  position: relative;
+  width: 300px;
+}
+
+.insert-video-search input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.insert-video-search input:focus {
+  border-color: var(--color-primary);
+}
+
+.insert-video-search svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.insert-video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.insert-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #E69496; /* Dusty pink background */
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    
+    .insert-card__img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.insert-card__image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.insert-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.insert-card__content {
+  position: relative;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.insert-card__label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.insert-card__title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0;
+  padding-right: 32px; /* space for play button */
+}
+
+.insert-card__play {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+  }
+}
+
+.insert-video-loadmore {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.insert-video-loadmore .btn-load-more {
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .insert-video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .insert-video-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .insert-video-search {
+    width: 100%;
+  }
+
+  .insert-video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .insert-video-grid {
+    grid-template-columns: 1fr;
+  }
+}
