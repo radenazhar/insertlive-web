@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon — Under Development</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <main class="coming-soon-container">
+
+    <!-- Vector Art Animation -->
+    <div class="art-wrapper" aria-hidden="true">
+      <svg class="art-svg" viewBox="0 0 340 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="csCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#242838" />
+            <stop offset="100%" stop-color="#181A26" />
+          </linearGradient>
+          <linearGradient id="csRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C61F25" />
+            <stop offset="100%" stop-color="#F1545C" />
+          </linearGradient>
+          <linearGradient id="csRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F1545C" />
+            <stop offset="50%" stop-color="#C61F25" />
+            <stop offset="100%" stop-color="#881A14" />
+          </linearGradient>
+          <linearGradient id="csLensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(241, 84, 92, 0.28)" />
+            <stop offset="100%" stop-color="rgba(198, 31, 37, 0.08)" />
+          </linearGradient>
+          <filter id="csCardShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.45" />
+          </filter>
+          <filter id="csGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#C61F25" flood-opacity="0.45" />
+          </filter>
+        </defs>
+
+        <!-- Radar Pulses -->
+        <circle class="anim-radar-1" cx="170" cy="115" r="35" fill="none" stroke="#F1545C" />
+        <circle class="anim-radar-2" cx="170" cy="115" r="35" fill="none" stroke="#C61F25" />
+
+        <!-- Ground Shadow -->
+        <ellipse cx="170" cy="205" rx="85" ry="12" fill="rgba(0, 0, 0, 0.35)" />
+
+        <!-- Floating Card Group -->
+        <g class="anim-card" filter="url(#csCardShadow)">
+          <rect x="90" y="42" width="160" height="135" rx="18" fill="url(#csCardGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+          
+          <!-- Top Red Header Bar -->
+          <path d="M90 60C90 50.0589 98.0589 42 108 42H232C241.941 42 250 50.0589 250 60V64H90V60Z" fill="url(#csRedGrad)" />
+          <circle cx="106" cy="53" r="3" fill="#FFFFFF" opacity="0.9" />
+          <circle cx="116" cy="53" r="3" fill="#FFFFFF" opacity="0.6" />
+          <circle cx="126" cy="53" r="3" fill="#FFFFFF" opacity="0.4" />
+
+          <!-- Skeleton Image Area -->
+          <rect x="106" y="74" width="128" height="42" rx="8" fill="#151722" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3 3" />
+          <path d="M154 98L163 88L176 102H138L148 91L154 98Z" fill="#4B5563" />
+          <circle cx="172" cy="84" r="3.5" fill="#4B5563" />
+
+          <!-- Skeleton Text Shimmer Lines -->
+          <rect class="anim-shimmer" x="106" y="126" width="92" height="7" rx="3.5" fill="#C61F25" opacity="0.75" />
+          <rect class="anim-shimmer anim-shimmer--delay-1" x="106" y="140" width="128" height="6" rx="3" fill="#6B7280" />
+          <rect class="anim-shimmer anim-shimmer--delay-2" x="106" y="152" width="76" height="6" rx="3" fill="#4B5563" />
+        </g>
+
+        <!-- Floating Category Pill 1 (!SELEB) -->
+        <g class="anim-badge-1">
+          <rect x="34" y="60" width="68" height="24" rx="12" fill="#1C1F2E" stroke="#F1545C" stroke-width="1.5" filter="url(#csCardShadow)" />
+          <text x="68" y="76" text-anchor="middle" font-family="'Sora', sans-serif" font-size="10" font-weight="800" fill="#F1545C">!SELEB</text>
+        </g>
+
+        <!-- Floating Category Pill 2 (!POP) -->
+        <g class="anim-badge-2">
+          <rect x="238" y="52" width="60" height="24" rx="12" fill="#1C1F2E" stroke="#C61F25" stroke-width="1.5" filter="url(#csCardShadow)" />
+          <text x="268" y="68" text-anchor="middle" font-family="'Sora', sans-serif" font-size="10" font-weight="800" fill="#F1545C">!POP</text>
+        </g>
+
+        <!-- Floating Category Pill 3 (!SNAP) -->
+        <g class="anim-badge-3">
+          <rect x="44" y="158" width="64" height="24" rx="12" fill="#1C1F2E" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" filter="url(#csCardShadow)" />
+          <text x="76" y="174" text-anchor="middle" font-family="'Sora', sans-serif" font-size="10" font-weight="800" fill="#FFFFFF">!SNAP</text>
+        </g>
+
+        <!-- Floating Magnifying Glass -->
+        <g class="anim-glass" filter="url(#csGlow)">
+          <circle cx="210" cy="120" r="34" fill="url(#csLensGrad)" stroke="url(#csRimGrad)" stroke-width="6" />
+          <circle cx="210" cy="120" r="28" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" />
+          
+          <g class="anim-glint">
+            <path d="M192 108C194 102 202 96 214 96C218 96 222 97 225 99" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+            <circle cx="228" cy="107" r="2" fill="#FFFFFF" />
+          </g>
+
+          <path d="M234 144L264 174" stroke="url(#csRimGrad)" stroke-width="8" stroke-linecap="round" />
+          <path d="M236 146L260 170" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+        </g>
+
+        <!-- Twinkling Sparkles -->
+        <path class="anim-sparkle-1" d="M78 108L81 116L89 119L81 122L78 130L75 122L67 119L75 116Z" fill="#F1545C" />
+        <path class="anim-sparkle-2" d="M272 145L274 151L280 153L274 155L272 161L270 155L264 153L270 151Z" fill="#C61F25" />
+        <path class="anim-sparkle-3" d="M260 92L261.5 96.5L266 98L261.5 99.5L260 104L258.5 99.5L254 98L258.5 96.5Z" fill="#F1545C" opacity="0.8" />
+      </svg>
+    </div>
+
+    <!-- Text: COMING SOON / UNDER DEVELOPMENT -->
+    <h1 class="title">COMING SOON</h1>
+    <p class="subtitle"><em>UNDER DEVELOPMENT</em></p>
+
+  </main>
+
+</body>
+
+</html>
