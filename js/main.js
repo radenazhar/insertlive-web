@@ -392,6 +392,167 @@ function initSnapModal() {
   }
 }
 
+/**
+ * Landing Page Empty State Controller & Dev Switcher
+ * Handles switching between Normal Landing Page & Animated Empty State
+ */
+function initLandingEmptyState() {
+  const normalContent = document.getElementById('landing-main-content');
+  const emptyState = document.getElementById('landing-empty-state');
+  const devBtnNormal = document.getElementById('dev-btn-normal');
+  const devBtnEmpty = document.getElementById('dev-btn-empty');
+  const btnRefresh = document.getElementById('btn-empty-refresh');
+  const btnReset = document.getElementById('btn-empty-reset');
+  const headingEl = document.getElementById('empty-state-heading');
+  const descEl = document.getElementById('empty-state-description');
+  const searchInput = document.getElementById('search-input');
+  const searchBar = document.getElementById('search-bar');
+  const searchSubmit = document.querySelector('.search-bar__submit');
+  const suggestionChips = document.querySelectorAll('.empty-state__chip');
+
+  if (!normalContent || !emptyState) return;
+
+  const defaultHeading = '<em>Under development</em>';
+
+  function setMode(mode, keyword = null) {
+    if (mode === 'empty') {
+      normalContent.style.display = 'none';
+      emptyState.style.display = 'block';
+
+      if (keyword && keyword.trim().length > 0) {
+        if (headingEl) {
+          headingEl.innerHTML = `<em>Under development</em> <span class="empty-state__keyword" style="display:block; font-size:16px; margin-top:6px; font-style:normal; font-weight:600;">("${escapeHtml(keyword)}")</span>`;
+        }
+      } else {
+        if (headingEl) headingEl.innerHTML = defaultHeading;
+      }
+
+      if (devBtnNormal) devBtnNormal.classList.remove('dev-state-btn--active');
+      if (devBtnEmpty) devBtnEmpty.classList.add('dev-state-btn--active');
+
+      emptyState.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      emptyState.style.display = 'none';
+      normalContent.style.display = 'block';
+
+      if (headingEl) headingEl.innerHTML = defaultHeading;
+
+      if (devBtnEmpty) devBtnEmpty.classList.remove('dev-state-btn--active');
+      if (devBtnNormal) devBtnNormal.classList.add('dev-state-btn--active');
+    }
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>'"]/g, 
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+  }
+
+  // Dev Switcher Clicks
+  if (devBtnNormal) {
+    devBtnNormal.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      setMode('normal');
+    });
+  }
+
+  if (devBtnEmpty) {
+    devBtnEmpty.addEventListener('click', () => {
+      setMode('empty');
+    });
+  }
+
+  // Action Buttons
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      if (searchBar) searchBar.classList.remove('is-active');
+      const searchBtn = document.getElementById('search-btn');
+      if (searchBtn) {
+        searchBtn.style.opacity = '1';
+        searchBtn.style.visibility = 'visible';
+      }
+      setMode('normal');
+    });
+  }
+
+  if (btnRefresh) {
+    btnRefresh.addEventListener('click', () => {
+      btnRefresh.classList.add('is-spinning');
+      const refreshText = btnRefresh.querySelector('span');
+      const originalText = refreshText ? refreshText.textContent : '';
+      if (refreshText) refreshText.textContent = 'Menyegarkan...';
+
+      setTimeout(() => {
+        btnRefresh.classList.remove('is-spinning');
+        if (refreshText) refreshText.textContent = originalText;
+
+        emptyState.style.animation = 'none';
+        void emptyState.offsetWidth;
+        emptyState.style.animation = 'emptyFadeIn 0.4s ease-out forwards';
+      }, 700);
+    });
+  }
+
+  // Suggestion Chips
+  suggestionChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const topic = chip.getAttribute('data-topic') || chip.textContent.trim();
+      if (searchInput) {
+        searchInput.value = topic;
+        if (searchBar) searchBar.classList.add('is-active');
+        const searchBtn = document.getElementById('search-btn');
+        if (searchBtn) {
+          searchBtn.style.opacity = '0';
+          searchBtn.style.visibility = 'hidden';
+        }
+      }
+      setMode('empty', topic);
+    });
+  });
+
+  // Search input triggering empty state simulation
+  if (searchInput) {
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const val = searchInput.value.trim();
+        if (val) {
+          setMode('empty', val);
+        } else {
+          setMode('normal');
+        }
+      }
+    });
+  }
+
+  if (searchSubmit) {
+    searchSubmit.addEventListener('click', (e) => {
+      e.preventDefault();
+      const val = searchInput ? searchInput.value.trim() : '';
+      if (val) {
+        setMode('empty', val);
+      }
+    });
+  }
+
+  const searchCancel = document.getElementById('search-cancel');
+  if (searchCancel) {
+    searchCancel.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      if (devBtnEmpty && devBtnEmpty.classList.contains('dev-state-btn--active')) {
+        setMode('normal');
+      }
+    });
+  }
+}
+
 /* ── Initialize ──────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initHeroCarousel();
@@ -400,4 +561,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearchBar();
   initMobileMenu();
   initSnapModal();
+  initLandingEmptyState();
 });
+

@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/scss/snap.scss" />
   <link rel="stylesheet" href="/scss/seleb.scss" />
   <link rel="stylesheet" href="/scss/pop.scss" />
+  <link rel="stylesheet" href="/scss/empty-state.scss" />
   <link rel="stylesheet" href="/scss/mobile.scss" />
 </head>
 
@@ -187,6 +188,9 @@
          MAIN CONTENT
          ============================================ -->
   <main class="main-content">
+
+    <!-- Wrapper for Normal Home Landing Page Content (Preserved 100%) -->
+    <div id="landing-main-content">
 
     <!-- ── 2. HERO SPOTLIGHT ────────────────── -->
     <section class="hero" id="hero-spotlight">
@@ -635,6 +639,128 @@
 
     <!-- End Main Section -->
 
+    </div>
+    <!-- End #landing-main-content -->
+
+    <!-- ============================================
+         EMPTY STATE ANIMATION SECTION (LANDING PAGE)
+         Preserves full home page; shown when no data / search / dev preview
+         ============================================ -->
+    <div class="empty-state-landing-wrapper" id="landing-empty-state" style="display: none;">
+      <div class="container">
+        <div class="empty-state">
+          
+          <!-- Animated Vector Art Illustration -->
+          <div class="empty-state__art" aria-hidden="true">
+            <svg class="empty-state__svg" viewBox="0 0 340 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Gradients -->
+                <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="100%" stop-color="#F7F8FA" />
+                </linearGradient>
+                <linearGradient id="brandRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C61F25" />
+                  <stop offset="100%" stop-color="#F1545C" />
+                </linearGradient>
+                <linearGradient id="glassRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F1545C" />
+                  <stop offset="50%" stop-color="#C61F25" />
+                  <stop offset="100%" stop-color="#881A14" />
+                </linearGradient>
+                <linearGradient id="glassLensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(255, 244, 244, 0.75)" />
+                  <stop offset="100%" stop-color="rgba(241, 84, 92, 0.12)" />
+                </linearGradient>
+                <filter id="softCardShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1A1A2E" flood-opacity="0.08" />
+                </filter>
+                <filter id="glassGlowEffect" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#C61F25" flood-opacity="0.25" />
+                </filter>
+              </defs>
+
+              <!-- Radar concentric pulses -->
+              <circle class="empty-anim-radar-1" cx="170" cy="115" r="35" fill="none" stroke="#F1545C" />
+              <circle class="empty-anim-radar-2" cx="170" cy="115" r="35" fill="none" stroke="#C61F25" />
+
+              <!-- Base decorative ground shadow -->
+              <ellipse cx="170" cy="205" rx="90" ry="12" fill="rgba(26, 26, 46, 0.05)" />
+
+              <!-- Floating News Card Group -->
+              <g class="empty-anim-card" filter="url(#softCardShadow)">
+                <!-- Main card body -->
+                <rect x="90" y="42" width="160" height="135" rx="18" fill="url(#cardGrad)" stroke="#E5E7EB" stroke-width="1.5" />
+                
+                <!-- Card Header Accent Bar (InsertLive Red) -->
+                <path d="M90 60C90 50.0589 98.0589 42 108 42H232C241.941 42 250 50.0589 250 60V64H90V60Z" fill="url(#brandRedGrad)" />
+                <circle cx="106" cy="53" r="3" fill="#FFFFFF" opacity="0.9" />
+                <circle cx="116" cy="53" r="3" fill="#FFFFFF" opacity="0.6" />
+                <circle cx="126" cy="53" r="3" fill="#FFFFFF" opacity="0.4" />
+                
+                <!-- Skeleton Image Area with dashed border -->
+                <rect x="106" y="74" width="128" height="42" rx="8" fill="#EDF0F5" stroke="#D1D5DB" stroke-width="1" stroke-dasharray="3 3" />
+                <!-- Mini placeholder mountain & sun icon in image -->
+                <path d="M154 98L163 88L176 102H138L148 91L154 98Z" fill="#CBD5E1" />
+                <circle cx="172" cy="84" r="3.5" fill="#CBD5E1" />
+
+                <!-- Skeleton Text Lines (with shimmer animation) -->
+                <rect class="empty-anim-shimmer" x="106" y="126" width="92" height="7" rx="3.5" fill="#C61F25" opacity="0.4" />
+                <rect class="empty-anim-shimmer empty-anim-shimmer--delay-1" x="106" y="140" width="128" height="6" rx="3" fill="#9CA3AF" />
+                <rect class="empty-anim-shimmer empty-anim-shimmer--delay-2" x="106" y="152" width="76" height="6" rx="3" fill="#CBD5E1" />
+              </g>
+
+              <!-- Floating Category Pill 1: !SELEB (Top Left) -->
+              <g class="empty-anim-badge-seleb">
+                <rect x="34" y="60" width="68" height="24" rx="12" fill="#FFFFFF" stroke="#F1545C" stroke-width="1.5" filter="url(#softCardShadow)" />
+                <text x="68" y="76" text-anchor="middle" font-family="'Sora', sans-serif" font-size="10" font-weight="800" fill="#C61F25">!SELEB</text>
+              </g>
+
+              <!-- Floating Category Pill 2: !POP (Top Right) -->
+              <g class="empty-anim-badge-pop">
+                <rect x="238" y="52" width="60" height="24" rx="12" fill="#FFFFFF" stroke="#C61F25" stroke-width="1.5" filter="url(#softCardShadow)" />
+                <text x="268" y="68" text-anchor="middle" font-family="'Sora', sans-serif" font-size="10" font-weight="800" fill="#C61F25">!POP</text>
+              </g>
+
+              <!-- Floating Category Pill 3: !SNAP (Bottom Left) -->
+              <g class="empty-anim-badge-snap">
+                <rect x="44" y="158" width="64" height="24" rx="12" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.2" filter="url(#softCardShadow)" />
+                <text x="76" y="174" text-anchor="middle" font-family="'Sora', sans-serif" font-size="10" font-weight="800" fill="#1A1A2E">!SNAP</text>
+              </g>
+
+              <!-- Floating Magnifying Glass -->
+              <g class="empty-anim-glass" filter="url(#glassGlowEffect)">
+                <!-- Lens rim -->
+                <circle cx="210" cy="120" r="34" fill="url(#glassLensGrad)" stroke="url(#glassRimGrad)" stroke-width="6" />
+                <circle cx="210" cy="120" r="28" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" />
+                
+                <!-- Internal glint sweep reflection -->
+                <g class="empty-anim-glint">
+                  <path d="M192 108C194 102 202 96 214 96C218 96 222 97 225 99" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+                  <circle cx="228" cy="107" r="2" fill="#FFFFFF" />
+                </g>
+
+                <!-- Handle -->
+                <path d="M234 144L264 174" stroke="url(#glassRimGrad)" stroke-width="8" stroke-linecap="round" />
+                <path d="M236 146L260 170" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+              </g>
+
+              <!-- Twinkling Sparkles (Stars) -->
+              <path class="empty-anim-sparkle-1" d="M78 108L81 116L89 119L81 122L78 130L75 122L67 119L75 116Z" fill="#F1545C" />
+              <path class="empty-anim-sparkle-2" d="M272 145L274 151L280 153L274 155L272 161L270 155L264 153L270 151Z" fill="#C61F25" />
+              <path class="empty-anim-sparkle-3" d="M260 92L261.5 96.5L266 98L261.5 99.5L260 104L258.5 99.5L254 98L258.5 96.5Z" fill="#F1545C" opacity="0.8" />
+            </svg>
+          </div>
+
+          <!-- Under Development Italic Text -->
+          <h2 class="empty-state__under-dev" id="empty-state-heading">
+            <em>Under development</em>
+          </h2>
+
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- ============================================
@@ -677,6 +803,24 @@
       <p class="site-footer__copyright">Copyright ©2026 Insertlive All Rights Reserved</p>
     </div>
   </footer>
+
+  <!-- Floating Development Preview Switcher -->
+  <aside class="dev-state-switcher" id="dev-state-switcher" aria-label="Development Mode Switcher">
+    <span class="dev-state-switcher__label">
+      <span class="dev-state-switcher__label-icon"></span>
+      Dev Preview
+    </span>
+    <div class="dev-state-switcher__group">
+      <button type="button" class="dev-state-btn dev-state-btn--active" id="dev-btn-normal" title="Tampilkan Konten Landing Page Normal">
+        <span class="dev-state-indicator"></span>
+        Normal
+      </button>
+      <button type="button" class="dev-state-btn" id="dev-btn-empty" title="Tampilkan Animasi Empty State">
+        <span class="dev-state-indicator"></span>
+        Empty State
+      </button>
+    </div>
+  </aside>
 
   <!-- JavaScript -->
   <script type="module" src="/js/main.js"></script>
