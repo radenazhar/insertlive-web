@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/* ============================================
+   InsertLive V.20 — !SELEB Section
+   Article feed (left) + Sidebar (right)
+   ============================================ */
+.seleb {
+  padding: var(--space-14) 0;
+}
+
+.seleb__grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+}
+@media (min-width: 1600px) {
+  .seleb__grid {
+    gap: 56px;
+  }
+}
+
+/* ── Article Feed ────────────────────────── */
+.seleb__feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Article Card ────────────────────────── */
+/* ── Article Card ────────────────────────── */
+.article-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-gray-200);
+  cursor: pointer;
+}
+
+.article-card:first-child {
+  padding-top: 0;
+}
+
+.article-card:last-of-type {
+  border-bottom: none;
+}
+
+.article-card:hover .article-card__title {
+  color: var(--color-primary);
+}
+
+.article-card:hover .article-card__thumbnail img {
+  transform: scale(1.05);
+}
+
+.article-card__thumbnail {
+  width: 320px;
+  min-width: 320px;
+  aspect-ratio: 16/9;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.article-card__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.article-card__thumbnail .img-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.article-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  flex: 1;
+  padding-top: 2px;
+}
+
+.article-card__category {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.article-card__title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--color-black);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transition-fast);
+}
+
+.article-card__excerpt {
+  font-size: 14px;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card__readmore {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* ── Sidebar ─────────────────────────────── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+/* ── Widget Terpopuler ───────────────────── */
+.popular-widget {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 0;
+}
+
+.popular-widget__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.popular-widget__title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.popular-widget__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.popular-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.popular-item:hover .popular-item__title {
+  color: var(--color-primary);
+}
+
+.popular-item:hover .popular-item__rank {
+  -webkit-text-stroke-color: var(--color-primary-hover);
+}
+
+.popular-item__rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: 52px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--color-white);
+  -webkit-text-fill-color: var(--color-white);
+  -webkit-text-stroke: 3.5px var(--color-primary);
+  paint-order: stroke fill;
+  line-height: 1;
+  width: 44px;
+  min-width: 44px;
+  flex-shrink: 0;
+  user-select: none;
+  transition: -webkit-text-stroke-color var(--transition-fast);
+}
+
+.popular-item__thumbnail {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.popular-item__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popular-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.popular-item__title {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--color-black);
+  transition: color var(--transition-fast);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.popular-item__time {
+  font-size: var(--font-article-desc-size);
+  line-height: var(--font-article-desc-line-height);
+  color: var(--color-gray-600);
+}
+
+/* ── Widget Jadwal Terkini ───────────────── */
+.schedule-widget {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 0;
+}
+
+.schedule-widget__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.schedule-widget__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.schedule-widget__title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.schedule-widget__date {
+  font-size: 12px;
+  color: var(--color-gray-600);
+}
+
+.schedule-widget__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--space-8);
+  align-items: center;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.schedule-item--live {
+  background-color: var(--color-primary-light);
+}
+
+.schedule-item__time {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-black);
+  min-width: 50px;
+}
+
+.schedule-item--live .schedule-item__time {
+  color: var(--color-primary);
+}
+
+.schedule-item__show {
+  font-size: 14px;
+  color: var(--color-black);
+  flex: 1;
+  text-align: left;
+}
+
+.schedule-item--live .schedule-item__show {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.schedule-widget__cta {
+  margin-top: var(--space-8);
+  width: 100%;
+  text-align: center;
+}
+
+.schedule-widget__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-gray-600);
+  text-decoration: none;
+}
+
+.schedule-widget__cta-btn span.plus-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 50%;
+  color: var(--color-gray-400);
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=seleb.css.map */
